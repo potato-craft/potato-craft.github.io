@@ -8,3 +8,8 @@ height:auto;
 p{
 color:#F445D3;
 }
+.page{
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+}
