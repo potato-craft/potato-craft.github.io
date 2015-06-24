@@ -47,7 +47,7 @@
       <ul class="todo-list" ng-repeat="todo in todos track by $index">
 <li>
           <span>{{ todo }}</span>
-          <button class="bt bt-achieve">Done</button>
+         <button class="bt bt-achieve" ng-click="done(todo)">Done</button>
         </li>
       </ul>
   </div>  
