@@ -14,7 +14,7 @@ app.controller('TodoCtrl', function($scope) {
   $scope.newTodo = '';
 
   var todosStorage=localStorage.getItem("todos");
-  
+  console.log('got item');
     if(todosStorage!=null && todosStorage!=undefined){
       console.log(JSON.parse(todosStorage));
   	  $scope.todos=JSON.parse(todosStorage);
