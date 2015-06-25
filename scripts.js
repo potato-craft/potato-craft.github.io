@@ -15,15 +15,12 @@ if (typeof(Storage) != "undefined") {
 var app = angular.module('Todo', []);
 app.controller('TodoCtrl', function($scope) {
   $scope.newTodo = '';
-	if(hasStorage){
-        // Store
-    		localStorage.setItem("todos", JSON.stringify($scope.todos));
-    	}
+
   
   var todosStorage=localStorage.getItem("todos");
   
   if(todosStorage!=null){
-  	$scope.todos=todosStorage;
+  	$scope.todos=JSON.parse(todosStorage);
   	}else{
   $scope.todos = [
     'Solve unanswerable questions', 
@@ -47,7 +44,11 @@ app.controller('TodoCtrl', function($scope) {
    $scope.add = function(e) {
     if (e.which && e.which === 13) {
       $scope.todos.push($scope.newTodo);
-      $scope.newTodo = '';
+      $scope.newTodo = '';	
+      if(hasStorage){
+        // Store
+    		localStorage.setItem("todos", JSON.stringify($scope.todos));
+    	}
     }
   };
 });
