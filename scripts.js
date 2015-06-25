@@ -1,27 +1,26 @@
+console.log('scripts loaded');
 var hasStorage;
 // Check browser support
 if (typeof(Storage) != "undefined") {
-	hasStorage=true;
-
-
-} else {
-    
- hasStorage=false;
- }
-
+  var hasStorage=true;
+}
+else {  
+  var hasStorage=false;
+}
+console.log('storage checked');
 var app = angular.module('Todo', []);
 app.controller('TodoCtrl', function($scope) {
+  
   $scope.newTodo = '';
 
-  
   var todosStorage=localStorage.getItem("todos");
   
     if(todosStorage!=null && todosStorage!=undefined){
-    console.log(JSON.parse(todosStorage));
+      console.log(JSON.parse(todosStorage));
   	  $scope.todos=JSON.parse(todosStorage);
   	}
   	else{
-  	 console.log('undefined');
+  	  console.log('undefined');
       $scope.todos=[
         'Solve unanswerable questions', 
         'Find the Cake',
