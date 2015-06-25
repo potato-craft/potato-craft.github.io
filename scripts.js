@@ -20,7 +20,7 @@ app.controller('TodoCtrl', function($scope) {
     		localStorage.setItem("todos", JSON.stringify($scope.todos));
     	}
   
-  var todosStorage=localStorage.getitem("todos");
+  var todosStorage=localStorage.getItem("todos");
   
   if(todosStorage!=null){
   	$scope.todos=todosStorage;
