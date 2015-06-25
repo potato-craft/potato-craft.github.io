@@ -10,7 +10,7 @@ else {
 console.log('storage checked');
 var app = angular.module('Todo', []);
 app.controller('TodoCtrl', function($scope) {
-  
+  console.log('controller entered');
   $scope.newTodo = '';
 
   var todosStorage=localStorage.getItem("todos");
