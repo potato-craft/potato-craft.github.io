@@ -15,7 +15,10 @@ if (typeof(Storage) != "undefined") {
 var app = angular.module('Todo', []);
 app.controller('TodoCtrl', function($scope) {
   $scope.newTodo = '';
-
+	if(hasStorage){
+        // Store
+    		localStorage.setItem("todos", JSON.stringify($scope.todos));
+    	}
   $scope.todos = [
     'Solve unanswerable questions', 
     'Find the Cake',
@@ -25,10 +28,14 @@ app.controller('TodoCtrl', function($scope) {
   $scope.done = function(todo) {
     var indexOf = $scope.todos.indexOf(todo);
     if (indexOf !== -1) {
-      $scope.todos.splice(indexOf, 1);
-    }
+      	$scope.todos.splice(indexOf, 1);
+      if(hasStorage){
         // Store
-    localStorage.setItem("todos", JSON.stringify($scope.todos));
+    		localStorage.setItem("todos", JSON.stringify($scope.todos));
+    	}
+    
+  
+  	}
   };
   
    $scope.add = function(e) {
