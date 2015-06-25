@@ -16,15 +16,17 @@ app.controller('TodoCtrl', function($scope) {
   
   var todosStorage=localStorage.getItem("todos");
   
-  if(todosStorage!=null && todosStorage!=undefined){
-  	$scope.todos=JSON.parse(todosStorage);
-  	}else{
-  $scope.todos = [
-    'Solve unanswerable questions', 
-    'Find the Cake',
-    'Use the sword gifted to us by a strange woman lying in a pond to enforce monarchy over the Britons, claiming ourself as king'
-  ];
-  }
+    if(todosStorage!=null && todosStorage!=undefined){
+    console.log(JSON.parse(todosStorage));
+  	  $scope.todos=JSON.parse(todosStorage);
+  	}
+  	else{
+      $scope.todos=[
+        'Solve unanswerable questions', 
+        'Find the Cake',
+        'Use the sword gifted to us by a strange woman lying in a pond to enforce monarchy over the Britons, claiming ourself as king'
+      ];
+    }
   $scope.done = function(todo) {
     var indexOf = $scope.todos.indexOf(todo);
     if (indexOf !== -1) {
