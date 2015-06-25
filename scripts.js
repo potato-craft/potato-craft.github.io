@@ -1,11 +1,23 @@
+var hasStorage;
+// Check browser support
+if (typeof(Storage) != "undefined") {
+	hasStorage=true;
+
+    hasStorage=false;
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+
 var app = angular.module('Todo', []);
 app.controller('TodoCtrl', function($scope) {
   $scope.newTodo = '';
 
   $scope.todos = [
-    'Learn Sketch', 
-    'Look at Dribbble and feel inferior',
-    'Actually learn how to use the Pen tool'
+    'Solve unanswerable questions', 
+    'Find the Cake',
+    'Use the sword gifted to us by a strange woman lying in a pond to enforce monarchy over the Britons, claiming ourself as king'
   ];
   
   $scope.done = function(todo) {
@@ -13,6 +25,8 @@ app.controller('TodoCtrl', function($scope) {
     if (indexOf !== -1) {
       $scope.todos.splice(indexOf, 1);
     }
+        // Store
+    localStorage.setItem("todos", JSON.stringify($scope.todos));
   };
   
    $scope.add = function(e) {
