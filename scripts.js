@@ -30,7 +30,7 @@ app.controller('TodoCtrl', function($scope) {
     'Find the Cake',
     'Use the sword gifted to us by a strange woman lying in a pond to enforce monarchy over the Britons, claiming ourself as king'
   ];
-  
+  }
   $scope.done = function(todo) {
     var indexOf = $scope.todos.indexOf(todo);
     if (indexOf !== -1) {
