@@ -11,7 +11,7 @@ images/imagename3.png
 FALLBACK:
 # This will enable imagename4.png to be as a replacement for 
 # all resources under the images dir when there is no network connectivity.
-images/ images/imagename4.png
+images/ images/nic.png
 
 NETWORK:
 # This will prevent other network resources from being accessed.
