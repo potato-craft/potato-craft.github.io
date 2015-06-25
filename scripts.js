@@ -3,9 +3,6 @@ var hasStorage;
 if (typeof(Storage) != "undefined") {
 	hasStorage=true;
 
-    // Retrieve
-   
-// document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 
 } else {
     
