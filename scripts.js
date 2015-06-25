@@ -19,6 +19,12 @@ app.controller('TodoCtrl', function($scope) {
         // Store
     		localStorage.setItem("todos", JSON.stringify($scope.todos));
     	}
+  
+  var todosStorage=localStorage.getitem("todos");
+  
+  if(todosStorage!=null){
+  	$scope.todos=todosStorage;
+  	}else{
   $scope.todos = [
     'Solve unanswerable questions', 
     'Find the Cake',
