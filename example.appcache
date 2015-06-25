@@ -1,0 +1,18 @@
+CACHE MANIFEST
+# Version 1
+
+CACHE:
+script/scriptfilename1.js
+css/cssfilename.css
+images/imagename1.png
+images/imagename2.jpg
+images/imagename3.png
+
+FALLBACK:
+# This will enable imagename4.png to be as a replacement for 
+# all resources under the images dir when there is no network connectivity.
+images/ images/imagename4.png
+
+NETWORK:
+# This will prevent other network resources from being accessed.
+images/imagename5.png
