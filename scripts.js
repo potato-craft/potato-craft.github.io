@@ -21,6 +21,7 @@ app.controller('TodoCtrl', function($scope) {
   	  $scope.todos=JSON.parse(todosStorage);
   	}
   	else{
+  	 console.log('undefined');
       $scope.todos=[
         'Solve unanswerable questions', 
         'Find the Cake',
