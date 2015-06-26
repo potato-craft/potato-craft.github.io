@@ -166,7 +166,7 @@ function downEnd() {
 // key 58, clear button
 
 function canvasclear() {
-  document.getElementById('clear').style.backgroundColor="blue";
+  document.getElementById('clear').classList.add("active");
   var c=document.getElementById("myCanvas");
   var ctx=c.getContext("2d");
   ctx.clearRect(0, 0, c.width, c.height);
@@ -175,7 +175,7 @@ function canvasclear() {
 }
 
 function unclear() {
-  document.getElementById('clear').style.backgroundColor="#d8d8d8";
+  document.getElementById('clear').classList.remove("active");
 }
 
 
