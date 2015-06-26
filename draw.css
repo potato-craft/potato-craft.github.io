@@ -37,6 +37,10 @@ height:605px;
   box-sizing:border-box;
 }
 
+.arrow.active{
+color:ff445a;
+}
+
 .left-arrows-contain{
   position:absolute;
   bottom:10px;
