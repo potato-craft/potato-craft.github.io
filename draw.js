@@ -63,7 +63,7 @@ lineColor=document.getElementById('lineColor').value;
 var leftRun=false;
 
 function leftStart() {
-  document.getElementById('arrow-left').style.backgroundColor="#0000ff";
+  document.getElementById('arrow-left').classList.add("active");
   leftRun=true;
   leftCont();
 }
@@ -80,7 +80,7 @@ function leftCont(){
 
 function leftEnd(){
   leftRun=false;
-  document.getElementById('arrow-left').style.backgroundColor="#d8d8d8";
+  document.getElementById('arrow-left').classList.remove("active");
 }
 
 
@@ -90,7 +90,7 @@ function leftEnd(){
 
 function upStart(){
   upRun=true;
-  document.getElementById('arrow-up').style.backgroundColor="#0000ff";
+  document.getElementById('arrow-up').classList.add("active");
   upCont();
 }
 
@@ -106,7 +106,7 @@ function upCont() {
 
 function upEnd(){
   upRun=false;
-  document.getElementById('arrow-up').style.backgroundColor="#d8d8d8";
+  document.getElementById('arrow-up').classList.remove("active");
 }
 
 
@@ -117,7 +117,7 @@ function upEnd(){
 var rightRun=false;
 
 function rightStart(){
-  document.getElementById('arrow-right').style.backgroundColor="#0000ff";
+  document.getElementById('arrow-right').classList.add("active");
   rightRun=true;
   rightCont();
 }
@@ -133,7 +133,7 @@ function rightCont() {
 
 function rightEnd(){
   rightRun=false; 
-  document.getElementById('arrow-right').style.backgroundColor="#d8d8d8";
+  document.getElementById('arrow-right').classList.remove("active");
 } 
 
 
@@ -144,7 +144,7 @@ function rightEnd(){
 var downRun=false;
 
 function downStart(){
-  document.getElementById('arrow-down').style.backgroundColor="#0000ff";
+  document.getElementById('arrow-down').classList.add("active");
   downRun=true;
   downCont();
 }
