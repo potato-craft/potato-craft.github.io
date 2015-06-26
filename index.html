@@ -13,6 +13,11 @@
           content="yes">
     <meta name="apple-mobile-web-app-status-bar-style"
           content="black">
+          <!-- New Meta
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+						-->
           
     <title> Calculator?</title>
     
@@ -23,10 +28,25 @@
 <link rel="apple-touch-startup-image" href="/startup.png">
 <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="styles.css" href="draw.css">
 
 </head>
 <body ng-app="Todo">
+<!-- Scripts & Styles?
+    <body onLoad="disableTouch()">
+    <script type="text/javascript" src="draw.js"></script>
+	<style type="text/css"></style></head>
+						-->
+<!-- Canvas & Inputs
+ <canvas id="myCanvas" width="800" height="600">
+      Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+<input type="color" id="lineColor" value="#272f3a">
+<a onclick="save()" href="#"><span class="convert-to-image">Convert to Image</span></a> 
+<img id="canvasImg" src="" class="converted-image" ></img>
+					-->
+
 <div class="page">
 <h1>Jimmy Moore</h1>
 
@@ -57,7 +77,23 @@
   <div class="col-md-1">Twenty-Three Bees</div>
   <div class="col-md-1">Twenty-Four Bees</div>
 </div>
- 
+ <!-- New Div Class & Tags
+   <div class="controls">
+
+
+    <div class="arrow" id="arrow-up" onmousedown="upStart()" onmouseup="upEnd()" onclick="void(0)" ontouchstart="upStart()" ontouchend="upEnd()" >^</div>
+
+    <div class="arrow" id="arrow-down" onmousedown="downStart()" onmouseup="downEnd()" onclick="void(0)" ontouchstart="downStart()" ontouchend="downEnd()" >V</div>
+
+    <div class="arrow" id="clear" onmousedown="canvasclear()" onmouseup="unclear()" onclick="void(0)" ontouchstart="canvasclear()" ontouchend="unclear()">X</div>
+
+    <div class="arrow" id="arrow-left" onmousedown="leftStart()" onmouseup="leftEnd()" onclick="void(0)" ontouchstart="leftStart()" ontouchend="leftEnd()">&lt;</div>
+
+    <div class="arrow" id="arrow-right" onmousedown="rightStart()" onmouseup="rightEnd()" onclick="void(0)" ontouchstart="rightStart()" ontouchend="rightEnd()">&gt;</div>
+
+
+  </div>  
+  							-->
 <p>Return for a second paragraph??</p>
 <img  src="nic.png" alt= "Nic Cage" width= "250" height= "150" title= "AHHHHH!!!!! SPIDERS!">
 <p><a target="_blank" href="http://google.com">Google</a></p>
@@ -83,8 +119,8 @@
 </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0-beta.8/angular.js"></script>
     <script src="/scripts.js"></script>
-     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <!-- <script>draw();</script> -->
     </body>
 </html>
