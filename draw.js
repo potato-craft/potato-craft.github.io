@@ -160,7 +160,7 @@ function downCont(){
 
 function downEnd() {
   downRun=false;
-  document.getElementById('arrow-down').style.backgroundColor="#d8d8d8";
+  document.getElementById('arrow-down').classList.remove("active");
 }
 
 // key 58, clear button
