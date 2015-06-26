@@ -1,230 +1,103 @@
-
-  var xpos=parseInt(400);
-  var ypos=parseInt(300);
-  var delay=75;
-  var lineColor="#272f3a";
-
-stopDef = function(e) {
-if (e && e.preventDefault)
-  e.preventDefault();
-else if (window.event && window.event.returnValue)
-  window.eventReturnValue = false;
-};
- 
-
-
-function draw(){
-  stopDef();
-	if(xpos>800){
-		xpos=800;}
-	if(ypos>600){
-		ypos=600;}
-	if(xpos<0){
-		xpos=0;}
-	if(ypos<0){
-		ypos=0;}
-
-  var c=document.getElementById("myCanvas");
-  var ctx=c.getContext("2d"); 
-  changeColor();
-  ctx.fillStyle=lineColor;  
-  ctx.fillRect(xpos,ypos,2,2);
+body{
+padding:10px 10px 10px 10px;
 }
 
-function disableTouch(event){
-touchMove(event);
-gestureChange(event);
+.main{
+box-sizing:border-box;
+position:relative;
+width:960px;
+background:#c40001;
+margin:auto;
+height:700px;
 }
 
-function touchMove(event) {
-    event.preventDefault();
+.canvas{
+display:inline-block;
+width:800px;
+float:left;
+background-color:#ffffff;
+margin:1px;
 }
 
-function gestureChange(event) {
-    event.preventDefault();
+.sidebar-right{
+position:relative;
+margin:1px;
+box-sizing:border-box;
+display:inline-block;
+width:156px;
+float:right;
+background:#d8d8d8;
+height:605px;
 }
 
-function changeColor(){
-lineColor=document.getElementById('lineColor').value;
+.arrow{
+  width:50px;
+  height:50px;
+  display:inline-block;
+  float:left;
+  margin:10px 10px 10px 10px;
+  padding:15px 15px 15px 15px;
+  background:#d8d8d8;
+  box-sizing:border-box;
 }
 
-
-
-//key 37, left arrow set  
-var leftRun=false;
-
-function leftStart() {
-  document.getElementById('arrow-left').style.backgroundColor="#0000ff";
-  leftRun=true;
-  leftCont();
+.left-arrows-contain{
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  height:140px;
+  width:70px;
 }
 
-function leftCont(){
-  if(leftRun==true){
-    xpos=xpos-2;
-    draw();
-
-    setTimeout("leftCont()", delay);
-  }
+.right-arrows-contain{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  height:70px;
 }
 
-
-function leftEnd(){
-  leftRun=false;
-  document.getElementById('arrow-left').style.backgroundColor="#d8d8d8";
+.convert-to-image{
+display:inline-block;
+box-sizing:border-box;
+width:156px;
+border:1px solid black;
 }
 
-
-
-
-//key 38, up arrow set
-
-function upStart(){
-  upRun=true;
-  document.getElementById('arrow-up').style.backgroundColor="#0000ff";
-  upCont();
+.converted-image{
+background:white;
+border:none;
+width:156px;
+max-height:200px;
 }
 
-function upCont() {
-  if(upRun==true){
-    ypos=ypos-2;
-    draw();
-  
-    setTimeout("upCont()", delay);
-  }
+.version{
+width:100%;
+height:200px;
+background:#aaaaaa;
+overflow-y:auto;
+position:absolute;
+right:0px;
+bottom:0px;
 }
 
-
-function upEnd(){
-  upRun=false;
-  document.getElementById('arrow-up').style.backgroundColor="#d8d8d8";
+.version-num{
+font-size:22px;
+font-weight:bold;
 }
-
-
-
-
-//key 39, right arrow set
-
-var rightRun=false;
-
-function rightStart(){
-  document.getElementById('arrow-right').style.backgroundColor="#0000ff";
-  rightRun=true;
-  rightCont();
+.version-date{
+font-size:16px;
+text-decoration:underline;
 }
-
-function rightCont() {
-  if(rightRun==true){  
-    xpos=xpos+2;
-    draw();
-
-    setTimeout("rightCont()", delay);
-  }
+.version-desc{
+margin:0px;
+font-size:14px;
 }
-
-function rightEnd(){
-  rightRun=false; 
-  document.getElementById('arrow-right').style.backgroundColor="#d8d8d8";
-} 
-	
-
-
-
-//key 40, down arrow set
-
-var downRun=false;
-
-function downStart(){
-  document.getElementById('arrow-down').style.backgroundColor="#0000ff";
-  downRun=true;
-  downCont();
+.version ul{
+margin:0px;
 }
-
-function downCont(){
-  if(downRun==true){
-    ypos=ypos+2;
-    draw();
-  
-    setTimeout("downCont()", delay);
-  }
+.version li{
+margin-left:-15px;
 }
-
-function downEnd() {
-  downRun=false;
-  document.getElementById('arrow-down').style.backgroundColor="#d8d8d8";
-}
-
-// key 58, clear button
-
-function canvasclear() {
-  document.getElementById('clear').style.backgroundColor="blue";
-  var c=document.getElementById("myCanvas");
-  var ctx=c.getContext("2d");
-  ctx.clearRect(0, 0, c.width, c.height);
-  
-  draw();
-}
-
-function unclear() {
-  document.getElementById('clear').style.backgroundColor="#d8d8d8";
-}
-
-
-
-
-document.onkeydown = function keydwn(evt) {
-
-  evt = evt || window.event;
-  switch (evt.keyCode) {
-      case 37:
-          if(!leftRun)leftStart();
-          break;
-      case 38:
-          if(!upRun)upStart();
-          break;
-      case 39:
-          if(!rightRun)rightStart();
-          break;
-      case 40:
-          if(!downRun)downStart();
-          break;
-      case 88:
-            canvasclear();
-            break;
-    }
-}
-
-
-
-document.onkeyup = function keyup(evt){
-  evt = evt || window.event;
-    switch (evt.keyCode) {
-        case 37:
-            leftEnd();
-            break;
-        case 38:
-            upEnd();
-            break;
-        case 39:
-            rightEnd();
-            break;
-        case 40:
-            downEnd();
-            break;
-        case 88:
-            unclear();
-            break;
-        
-    }
-}
-
-
-
-function save(){
-  var c=document.getElementById("myCanvas");
-  var ctx=c.getContext("2d"); 
-  
-  var dataURL = c.toDataURL();
-  document.getElementById('canvasImg').src = dataURL;
+.control-bar{
 
 }
