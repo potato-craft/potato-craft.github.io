@@ -1,4 +1,4 @@
-/*
+
   var xpos=parseInt(400);
   var ypos=parseInt(300);
   var delay=75;
@@ -228,4 +228,3 @@ function save(){
   document.getElementById('canvasImg').src = dataURL;
 
 }
-*/
